@@ -27,7 +27,7 @@ public class ClienteResource {
 	
 	
 	
-	//End point para acessar os usuários
+	//Endpoint para acessar os usuários
 	@GetMapping
 	public ResponseEntity<List<Cliente>> findAll(){
 		List<Cliente> list = service.findAll();

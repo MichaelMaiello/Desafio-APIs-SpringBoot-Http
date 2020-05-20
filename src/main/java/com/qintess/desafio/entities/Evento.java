@@ -25,7 +25,7 @@ public class Evento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	private String descricacao;
+	private String descricao;
 	private Instant data;
 	private Integer qtdIngresso;
 	private Double preco;
@@ -47,7 +47,7 @@ public class Evento implements Serializable {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.descricacao = descricacao;
+		this.descricao = descricacao;
 		this.data = data;
 		this.qtdIngresso = qtdIngresso;
 		this.preco = preco;
@@ -71,11 +71,11 @@ public class Evento implements Serializable {
 	}
 
 	public String getDescricacao() {
-		return descricacao;
+		return descricao;
 	}
 
 	public void setDescricacao(String descricacao) {
-		this.descricacao = descricacao;
+		this.descricao = descricacao;
 	}
 
 	public Instant getData() {

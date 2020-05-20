@@ -32,8 +32,4 @@ public class ResourceExceptionHandler {
 		StandarError err = new StandarError(Instant.now(), status.value(), error, e.getMessage(), resquest.getRequestURI());
 		return ResponseEntity.status(status).body(err);
 	}
-	
-	//Update
-	
-
 }

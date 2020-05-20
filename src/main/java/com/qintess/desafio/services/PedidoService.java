@@ -15,7 +15,7 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository repository;
 	
-	//buscar todos os usuários
+	//buscar todos 
 	public List<Pedido> findAll(){
 		return repository.findAll();
 	}

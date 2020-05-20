@@ -100,5 +100,4 @@ public class TesteConfig implements CommandLineRunner{
 		pedidoRepository.save(pedido1);
 		
 	}
-
 }
