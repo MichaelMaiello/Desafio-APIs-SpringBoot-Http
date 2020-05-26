@@ -45,6 +45,9 @@ public class TesteConfig implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+
+		
 
 
 		Cliente cliente1 = new Cliente(null, "Michael", "michael@.com.", "12341234", "123456");
@@ -89,7 +92,7 @@ public class TesteConfig implements CommandLineRunner{
 		ItemPedido ip1 = new ItemPedido(pedido1, evento1, 2, evento1.getPreco());
 		ItemPedido ip2 = new ItemPedido(pedido1, evento3, 1, evento4.getPreco());
 		ItemPedido ip3 = new ItemPedido(pedido2, evento3, 2, evento1.getPreco());
-		ItemPedido ip4 = new ItemPedido(pedido3, evento5, 2, evento5.getPreco());
+		ItemPedido ip4 = new ItemPedido(pedido3, evento5, 5, evento5.getPreco());
 		//salvar no banco
 		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3, ip4));
 		
@@ -98,6 +101,5 @@ public class TesteConfig implements CommandLineRunner{
 		pedido1.setPagemento(pagamento1);
 		//salvar no banco
 		pedidoRepository.save(pedido1);
-		
 	}
 }

@@ -3,6 +3,8 @@ package com.qintess.desafio.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -45,4 +47,25 @@ public class CasaShowService {
 			throw new DatabaseException(e.getMessage());
 		}
 	}
+	
+	// Atualizar
+		public CasaShow update(Long id, CasaShow obj) {
+			try {
+				CasaShow entity = repository.getOne(id);
+				updateData(entity, obj);
+				return repository.save(entity);
+			} catch (EntityNotFoundException e) {
+				e.printStackTrace();
+				throw new ResourceNotFoundException(id);
+			}
+
+		}
+
+		private void updateData(CasaShow entity, CasaShow obj) {
+			entity.setNome(obj.getNome());
+			entity.setEndereco(obj.getEndereco());
+			entity.setCapacidade(obj.getCapacidade());
+			entity.setTelefone(obj.getTelefone());
+			entity.setSite(obj.getSite());
+		}
 }
