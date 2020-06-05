@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,18 +29,21 @@ public class CasaShowResource {
 	
 	
 	//End point para acessar os usuários
+	@CrossOrigin(origins = "*")
 	@GetMapping
 	public ResponseEntity<List<CasaShow>> findAll(){
 		List<CasaShow> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<CasaShow> findById(@PathVariable Long id){
 		CasaShow obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@PostMapping
 	public ResponseEntity<CasaShow> insert(@RequestBody CasaShow obj){
 		obj = service.insert(obj);
@@ -50,12 +54,14 @@ public class CasaShowResource {
 		return ResponseEntity.created(uri).body(obj);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id){
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 	
+	@CrossOrigin(origins = "*")
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<CasaShow> update(@PathVariable Long id, @RequestBody CasaShow obj){
 		obj = service.update(id, obj);

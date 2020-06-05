@@ -71,30 +71,30 @@ public class TesteConfig implements CommandLineRunner{
 		casaShowRepository.saveAll(Arrays.asList(casaShow1, casaShow2, casaShow3));
 		
 		
-		Evento evento1 = new Evento(null, "cover", "cover", Instant.parse("2020-10-20T21:30:00Z"), 170, 100.00);
-		Evento evento2 = new Evento(null, "cover", "cover", Instant.parse("2020-10-20T21:30:00Z"), 170, 100.00);
-		Evento evento3 = new Evento(null, "cover", "cover", Instant.parse("2020-10-20T21:30:00Z"), 170, 100.00);
-		Evento evento4 = new Evento(null, "cover", "cover", Instant.parse("2020-10-20T21:30:00Z"), 170, 100.00);
-		Evento evento5 = new Evento(null, "cover", "cover", Instant.parse("2020-10-20T21:30:00Z"), 170, 100.00);
+		Evento evento1 = new Evento(null, "Nightwish", "Nightwish", Instant.parse("2020-10-20T21:30:00Z"), 400, 300.00);
+		Evento evento2 = new Evento(null, "Capital Inicial", "Capital Inicial", Instant.parse("2020-10-20T21:30:00Z"), 350, 100.00);
+		Evento evento3 = new Evento(null, "Henrique & Juliano", "Henrique & Juliano", Instant.parse("2020-10-20T21:30:00Z"), 600, 150.00);
+		Evento evento4 = new Evento(null, "Lollapalooza Brasil", "Lollapalooza Brasil", Instant.parse("2020-10-20T21:30:00Z"), 10000, 700.00);
+	
 		//Salvar no banco
-		eventoRepository.saveAll(Arrays.asList(evento1, evento2,evento3, evento4, evento5));
+		eventoRepository.saveAll(Arrays.asList(evento1, evento2,evento3, evento4));
 		
 		evento1.getCasas().add(casaShow2);
 		evento2.getCasas().add(casaShow1);
 		evento2.getCasas().add(casaShow3);
 		evento3.getCasas().add(casaShow3);
 		evento4.getCasas().add(casaShow3);
-		evento5.getCasas().add(casaShow2);
+		
 		//Salvar no banco
-		eventoRepository.saveAll(Arrays.asList(evento1,evento2,evento3,evento4, evento5));
+		eventoRepository.saveAll(Arrays.asList(evento1,evento2,evento3,evento4));
 		
 		
 		ItemPedido ip1 = new ItemPedido(pedido1, evento1, 2, evento1.getPreco());
 		ItemPedido ip2 = new ItemPedido(pedido1, evento3, 1, evento4.getPreco());
 		ItemPedido ip3 = new ItemPedido(pedido2, evento3, 2, evento1.getPreco());
-		ItemPedido ip4 = new ItemPedido(pedido3, evento5, 5, evento5.getPreco());
+		
 		//salvar no banco
-		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3, ip4));
+		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 		
 		
 		Pagamento pagamento1 = new Pagamento(null, Instant.parse("2020-10-20T23:30:00Z"), pedido1);

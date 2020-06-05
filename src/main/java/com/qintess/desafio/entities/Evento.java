@@ -43,11 +43,11 @@ public class Evento implements Serializable {
 	public Evento() {
 	}
 
-	public Evento(Long id, String nome, String descricacao, Instant data, Integer qtdIngresso, Double preco) {
+	public Evento(Long id, String nome, String descricao, Instant data, Integer qtdIngresso, Double preco) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.descricao = descricacao;
+		this.descricao = descricao;
 		this.data = data;
 		this.qtdIngresso = qtdIngresso;
 		this.preco = preco;
@@ -70,11 +70,11 @@ public class Evento implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getDescricacao() {
+	public String getDescricao() {
 		return descricao;
 	}
 
-	public void setDescricacao(String descricacao) {
+	public void setDescricao(String descricacao) {
 		this.descricao = descricacao;
 	}
 

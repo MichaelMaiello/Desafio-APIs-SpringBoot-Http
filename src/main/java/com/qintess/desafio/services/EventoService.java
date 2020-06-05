@@ -63,7 +63,7 @@ public class EventoService {
 
 	private void updateData(Evento entity, Evento obj) {
 		entity.setNome(obj.getNome());
-		entity.setDescricacao(obj.getDescricacao());
+		entity.setDescricao(obj.getDescricao());
 		entity.setData(obj.getData());
 		entity.setQtdIngresso(obj.getQtdIngresso());
 		entity.setPreco(obj.getPreco());
